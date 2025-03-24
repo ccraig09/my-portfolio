@@ -138,7 +138,7 @@ export default function Home() {
         >
           <Box
             component="img"
-            src="/CARLOS_HEADSHOT2.png"
+            src="/CARLOS_HEADSHOT2.PNG"
             alt="Headshot"
             sx={{
               width: 200,
