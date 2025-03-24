@@ -5,7 +5,6 @@ import {
   Typography,
   Container,
   Box,
-  Grid,
   Card,
   CardContent,
   Button,
@@ -169,7 +168,7 @@ export default function Home() {
         </Typography>
         <Grid2 container spacing={2} mb={4}>
           {projects.map((proj, idx) => (
-            <Grid2 item xs={12} md={6} key={idx}>
+            <Grid2 size={{ xs: 12, md: 6 }} key={idx}>
               <Card>
                 <CardContent>
                   <Typography variant="h6">{proj.title}</Typography>
