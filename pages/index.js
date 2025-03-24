@@ -11,9 +11,9 @@ import {
   Button,
   TextField,
   Link as MUILink,
+  Grid2,
 } from "@mui/material";
 
-// Example data (customize freely)
 const projects = [
   {
     title: "No Excusas",
@@ -92,7 +92,6 @@ const skills = [
 ];
 
 export default function Home() {
-  // Simple contact form state
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -106,7 +105,7 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // For now, just log the data. You can integrate an API or email service here.
+    // TODO: add form submission logic
     console.log("Contact Form Submission:", formData);
     // Reset form
     setFormData({ name: "", email: "", message: "" });
@@ -115,7 +114,6 @@ export default function Home() {
 
   return (
     <>
-      {/* Navbar */}
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -133,7 +131,6 @@ export default function Home() {
       </AppBar>
 
       <Container sx={{ mt: 4, mb: 4 }}>
-        {/* Hero / Intro Section */}
         <Box
           display="flex"
           alignItems="center"
@@ -167,24 +164,22 @@ export default function Home() {
           </Box>
         </Box>
 
-        {/* Projects Section */}
         <Typography variant="h5" gutterBottom>
           Projects
         </Typography>
-        <Grid container spacing={2} mb={4}>
+        <Grid2 container spacing={2} mb={4}>
           {projects.map((proj, idx) => (
-            <Grid item xs={12} md={6} key={idx}>
+            <Grid2 item xs={12} md={6} key={idx}>
               <Card>
                 <CardContent>
                   <Typography variant="h6">{proj.title}</Typography>
                   <Typography variant="body2">{proj.description}</Typography>
                 </CardContent>
               </Card>
-            </Grid>
+            </Grid2>
           ))}
-        </Grid>
+        </Grid2>
 
-        {/* Experience Section */}
         <Typography variant="h5" gutterBottom>
           Experience
         </Typography>
@@ -203,7 +198,6 @@ export default function Home() {
           </Box>
         ))}
 
-        {/* Skills Section */}
         <Typography variant="h5" gutterBottom>
           Skills
         </Typography>
@@ -217,7 +211,6 @@ export default function Home() {
           </ul>
         </Box>
 
-        {/* Education */}
         <Typography variant="h5" gutterBottom>
           Education
         </Typography>
@@ -234,7 +227,6 @@ export default function Home() {
           <Typography variant="body2">Udemy (September 2021)</Typography>
         </Box>
 
-        {/* Contact Form */}
         <Typography variant="h5" gutterBottom>
           Contact Me
         </Typography>
@@ -274,7 +266,6 @@ export default function Home() {
           </Button>
         </Box>
 
-        {/* Footer / Quick Links */}
         <Box mt={6} textAlign="center">
           <Typography variant="body2" color="text.secondary">
             © {new Date().getFullYear()} Carlos Craig |{" "}
