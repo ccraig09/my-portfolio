@@ -138,7 +138,7 @@ export default function Home() {
         >
           <Box
             component="img"
-            src="/CARLOS_HEADSHOT.png"
+            src="/CARLOS_HEADSHOT2.png"
             alt="Headshot"
             sx={{
               width: 200,
@@ -267,7 +267,7 @@ export default function Home() {
 
         <Box mt={6} textAlign="center">
           <Typography variant="body2" color="text.secondary">
-            © {new Date().getFullYear()} Carlos Craig |{" "}
+            © {new Date().getFullYear()} Craig Development LLC |{" "}
             <MUILink
               href="https://www.linkedin.com/in/carloscraig"
               target="_blank"
@@ -277,8 +277,7 @@ export default function Home() {
             |{" "}
             <MUILink href="https://github.com/ccraig09" target="_blank">
               GitHub
-            </MUILink>{" "}
-            | carloscraig.dev
+            </MUILink>
           </Typography>
         </Box>
       </Container>
