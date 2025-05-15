@@ -120,7 +120,7 @@ export default function Home() {
           </Typography>
           <Button
             color="inherit"
-            href="/CRAIG_CARLOS_TECH_RESUME.pdf"
+            href="/Carlos_Craig_Tech_Resume.pdf"
             download
             sx={{ textTransform: "none" }}
           >
@@ -227,42 +227,18 @@ export default function Home() {
         </Box>
 
         <Typography variant="h5" gutterBottom>
-          Contact Me
+          Schedule a Call
         </Typography>
-        <Box component="form" onSubmit={handleSubmit} sx={{ maxWidth: 500 }}>
-          <TextField
-            label="Name"
-            name="name"
-            fullWidth
-            margin="normal"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-          />
-          <TextField
-            label="Email"
-            name="email"
-            type="email"
-            fullWidth
-            margin="normal"
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-          <TextField
-            label="Message"
-            name="message"
-            multiline
-            rows={4}
-            fullWidth
-            margin="normal"
-            value={formData.message}
-            onChange={handleInputChange}
-            required
-          />
-          <Button variant="contained" type="submit" sx={{ mt: 2 }}>
-            Send
-          </Button>
+        <Box sx={{ height: 700, mb: 4 }}>
+          <iframe
+            src="https://calendly.com/carlos-craig09?embed_domain=localhost&embed_type=Inline"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            scrolling="no"
+            style={{ minWidth: "320px" }}
+            title="Schedule with Carlos Craig"
+          ></iframe>
         </Box>
 
         <Box mt={6} textAlign="center">
