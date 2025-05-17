@@ -88,7 +88,7 @@ export default function WeddingCountdown() {
             mb: 0.5,
           }}
         >
-          Our Wedding
+          Our Wedding hi mom its jo
         </Typography>
         <Typography
           variant="h5"
