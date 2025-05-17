@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef } from "react";
 import dayjs from "dayjs";
 import { Box, Typography, Card, Container, Grid } from "@mui/material";
-import EnvelopeSplash from "../components/EnvelopeSplash";
 
 // -------- SETTINGS --------
 const WEDDING_DATE = "2025-07-12T16:00:00"; // 4:00PM July 12, 2025
@@ -26,12 +25,46 @@ function getCountdown() {
 
 const { count, label } = getCountdown();
 
-export default function WeddingCountdown() {
-  const [envelopeOpened, setEnvelopeOpened] = useState(false);
+const RSVPAnimationStyle = () => (
+  <style>{`
+    @keyframes bounceIn {
+      0% { transform: scale(0.7); opacity: 0; }
+      60% { transform: scale(1.1); opacity: 1; }
+      80% { transform: scale(0.95); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(179,139,88,0.23);}
+      70% { box-shadow: 0 0 0 16px rgba(179,139,88,0);}
+      100% { box-shadow: 0 0 0 0 rgba(179,139,88,0);}
+    }
+    .bounce-in {
+      animation: bounceIn 1s cubic-bezier(.61,-0.06,.19,1.1) both;
+    }
+    .pulse {
+      animation: pulse 1.2s ease-in-out;
+    }
+  `}</style>
+);
 
-  if (!envelopeOpened) {
-    return <EnvelopeSplash onOpen={() => setEnvelopeOpened(true)} />;
-  }
+export default function WeddingCountdown() {
+  const rsvpRef = useRef(null);
+
+  useEffect(() => {
+    if (rsvpRef.current) rsvpRef.current.classList.add("bounce-in");
+    let count = 0;
+    const pulseInterval = setInterval(() => {
+      if (rsvpRef.current) {
+        rsvpRef.current.classList.add("pulse");
+        setTimeout(() => {
+          if (rsvpRef.current) rsvpRef.current.classList.remove("pulse");
+        }, 1200);
+        count++;
+        if (count === 3) clearInterval(pulseInterval);
+      }
+    }, 3000);
+    return () => clearInterval(pulseInterval);
+  }, []);
   return (
     <Box
       sx={{
@@ -151,6 +184,7 @@ export default function WeddingCountdown() {
           </Typography>
         </Card>
 
+        <RSVPAnimationStyle />
         <Box textAlign="center" mt={2} mb={4}>
           <a
             href="https://forms.gle/WDEPcicUwJNaBYUW8"
@@ -159,6 +193,8 @@ export default function WeddingCountdown() {
             style={{ textDecoration: "none" }}
           >
             <button
+              ref={rsvpRef}
+              className=""
               style={{
                 background: "#b38b58",
                 color: "#fff",
