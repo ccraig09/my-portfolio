@@ -145,6 +145,38 @@ export default function WeddingCountdown() {
           </Typography>
         </Card>
 
+        <Box textAlign="center" mt={2} mb={4}>
+          <a
+            href="https://forms.gle/WDEPcicUwJNaBYUW8"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <button
+              style={{
+                background: "#b38b58",
+                color: "#fff",
+                fontWeight: 700,
+                fontSize: "1.1rem",
+                padding: "0.75em 2em",
+                border: "none",
+                borderRadius: "2em",
+                boxShadow: "0 2px 8px rgba(179,139,88,0.13)",
+                cursor: "pointer",
+                letterSpacing: 1,
+                marginTop: 8,
+                transition: "background 0.2s",
+              }}
+              onMouseOver={(e) =>
+                (e.currentTarget.style.background = "#977044")
+              }
+              onMouseOut={(e) => (e.currentTarget.style.background = "#b38b58")}
+            >
+              RSVP Here
+            </button>
+          </a>
+        </Box>
+
         {/* Ceremony & Reception Info */}
         <Grid container spacing={2} mb={2}>
           <Grid item xs={12} sm={6}>
