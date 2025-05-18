@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import dayjs from "dayjs";
 import { Box, Typography, Card, Container, Grid } from "@mui/material";
-import EnvelopeSplash from "../components/EnvelopeSplash";
+
 
 // -------- SETTINGS --------
 const WEDDING_DATE = "2025-07-12T16:00:00"; // 4:00PM July 12, 2025
@@ -29,9 +29,8 @@ const { count, label } = getCountdown();
 export default function WeddingCountdown() {
   const [envelopeOpened, setEnvelopeOpened] = useState(false);
 
-  if (!envelopeOpened) {
-    return <EnvelopeSplash onOpen={() => setEnvelopeOpened(true)} />;
-  }
+  
+  
   return (
     <Box
       sx={{
