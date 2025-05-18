@@ -13,7 +13,7 @@ height:auto;
 position:relative;
 background: #272623;
 cursor: pointer;
-padding: 0px 0px 65px 0px;
+padding: 0px 0px 70px 0px;
  }
 
 .top-side{
@@ -55,13 +55,13 @@ position: relative;
 
 .left-side, .right-side{
  border-top: 100px solid transparent;
- border-bottom: 110px solid transparent;
+ border-bottom: 120px solid transparent;
  top: 0;
  z-index: 4;
 }
 
 .image{
- width: 75%;
+ width: 72%;
  position: absolute;
  top: 0;
  left: 50%;
